@@ -1,34 +1,39 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="col-md-2">
+    
+  </div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.first_name %></td>
-        <td><%= post.last_name %></td>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="col-md-10">
+      <% @posts.each do |post| %>
+      
+        <h1 class="alpha"><%= post.title %></h1>
+        <h4 class="byline">Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
+          <div class="row">
+            <div class="col-md-8">
+              <h4><%= post.content %></h4>
+              <h4><%= link_to 'Show', post %></h4>
+              <% if current_user.id == post.user_id %>
+                <h4><%= link_to 'Edit', edit_post_path(post) %></h4>
+                <h4><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+              <% end %>
+              <h4><%= link_to 'New Post', new_post_path %></h4>
+            </div>
+            <div class="col-md-4">
+              
 
-<br>
+            </div>
+          </div>
+      <% end %>
+  </div>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+
+
+
+
+
+
 
 

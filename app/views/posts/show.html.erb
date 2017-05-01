@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @post.name %>
+  <strong>First Name:</strong>
+  <%= @post.user.first_name %>
 </p>
-
+<p>
+  <strong>Last Name:</strong>
+  <%= @post.user.last_name %>
+</p>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -15,5 +17,7 @@
   <%= @post.content %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% if current_user.id == @post.user_id %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+	<%= link_to 'Back', posts_path %>

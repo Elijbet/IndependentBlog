@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!
 
 
   # GET /posts
@@ -18,7 +19,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @post.id == current_user.id
   end
 
   # GET /posts/1/edit
@@ -29,6 +29,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+
 
     respond_to do |format|
       if @post.save
@@ -66,6 +68,12 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def check_user
+      unless (@post.user == current_user) 
+        redirect_to root_url alert: "Sorry, this review belongs to someone else"
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -73,6 +81,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :title, :content)
+      params.require(:post).permit(:title, :content)
     end
 end
