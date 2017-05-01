@@ -12,7 +12,7 @@
         <h4 class="byline">Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
           <div class="row">
             <div class="col-md-8">
-              <h4><%= post.content %></h4>
+              <h4><%= h(post.content).gsub(/\n/, '<br/>').html_safe %></h4>
               <h4><%= link_to 'Show', post %></h4>
               <% if current_user.id == post.user_id %>
                 <h4><%= link_to 'Edit', edit_post_path(post) %></h4>
