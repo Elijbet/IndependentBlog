@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, except: [:index, :show]
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -15,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    post.id == current_user.id
   end
 
   # GET /posts/1/edit
