@@ -1,18 +1,27 @@
 <div class="row">
   <div class="col-md-8">
     <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-md-2">
-        <!-- date -->
-        <h4 class="byline"><%= time_ago_in_words(post.created_at) %> ago </h4>
-      </div>
-      <div class="col-md-10">
-        <div class="seperation"></div>
-        <!-- content -->
-        <h5><%= link_to "#{post.title}", post %></h5>
-        <h4 class="byline"> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
-        <h4><%= sanitize(truncate(post.content, length: 150)) %></h4>
-      </div>
+      <% @posts.each do |post| %>
+        <div class="col-md-2">
+          <!-- date -->
+          <h4 class="byline"><%= time_ago_in_words(post.created_at) %> ago </h4>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="seperation"></div>
+              <!-- content -->
+              <h5><%= link_to "#{post.title}", post %></h5>
+              <h4 class="byline"> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
+              <h4><%= sanitize(truncate(post.content, length: 150)) %></h4>
+            </div>
+            <div class="col-md-4">
+              <% unless post.image.blank? %> 
+                <%= image_tag post.image_url %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
