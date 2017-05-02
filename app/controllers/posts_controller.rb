@@ -3,18 +3,25 @@ class PostsController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
   before_filter :authenticate_user!
+  before_action :tag_cloud
 
 
+  def tag_cloud
+    @tag = Post.tag_counts_on(:tags).order('count desc').limit(20)
+  end
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @posts = Post.all
     @posts = Post.paginate(page: params[:page], per_page: 1)
   end
 
@@ -71,6 +78,9 @@ class PostsController < ApplicationController
 
   private
 
+
+
+
     def check_user
       unless (@post.user == current_user) 
         redirect_to root_url alert: "Sorry, this review belongs to someone else"
@@ -83,6 +93,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :name, :tag_list)
     end
 end

@@ -19,12 +19,13 @@ h4{
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-size: 1.3em;
+	line-height: 1.3em;
 }
 h5{
 	font-family: 'Lato', sans-serif;
 	font-weight: 900;
 	font-size: 1.8em;
-
+	line-height: 1.3em;
 }
 .byline {
 	color: #089E00;
@@ -38,6 +39,24 @@ h5{
   content: '';
   display: block;
 }
+
+.css1 { color: #dbb3c5; }
+.css2 { color: #e298b9; }
+.css3 { color: #e56ba2; }
+.css4 { color: #e85195; }
+
+.tag > h4 > a {
+    height: 28px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 5px 15px;
+    border: 1px solid #E7E7E7;
+    border-radius: 14px;
+    display: block;
+    margin-top: 5px;
+
+}
+
 
 
 
