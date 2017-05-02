@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'bootstrap-will_paginate', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

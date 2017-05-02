@@ -7,11 +7,11 @@
         <h4 class="byline"><%= time_ago_in_words(post.created_at) %> ago </h4>
       </div>
       <div class="col-md-10">
+        <div class="seperation"></div>
         <!-- content -->
         <h5><%= link_to "#{post.title}", post %></h5>
         <h4 class="byline"> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
         <h4><%= sanitize(truncate(post.content, length: 150)) %></h4>
-        
       </div>
       <% end %>
     </div>

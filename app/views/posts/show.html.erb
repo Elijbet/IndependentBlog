@@ -5,6 +5,8 @@
   </div>
 
   <div class="col-md-10">
+    <%= will_paginate @posts %>
+
       <% @posts.each do |post| %>
       
         <h1 class="alpha"><%= post.title %></h1>
@@ -26,5 +28,6 @@
             </div>
           </div>
       <% end %>
+    <%= will_paginate %>
   </div>
 </div>
