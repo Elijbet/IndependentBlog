@@ -37,6 +37,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'carrierwave', '~> 1.1'
+gem 'fog', '~> 1.40'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
