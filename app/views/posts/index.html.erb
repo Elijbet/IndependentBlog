@@ -13,7 +13,7 @@
               <!-- content -->
               <h5><%= link_to "#{post.title}", post %></h5>
               <h4 class="byline"> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
-              <h4><%= sanitize(truncate(post.content, length: 150)) %></h4>
+              <h4><%= truncate(post.content, length: 150) %></h4>
             </div>
             <div class="col-md-4">
               <% unless post.image.blank? %> 
