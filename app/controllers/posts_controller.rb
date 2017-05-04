@@ -5,26 +5,14 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
   before_action :tag_cloud
 
-  def upvote
-    @post.upvote_by current_user
-    redirect_to :back
-  end
 
-  def downvote
-    @post.downvote_by current_user
-    redirect_to :back
-  end
-
-  def tag_cloud
-    @tag = Post.tag_counts_on(:tags).order('count desc').limit(20)
-  end
   # GET /posts
   # GET /posts.json
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).order(created_at: :desc)
     else
-      @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
     end
   end
 
@@ -85,10 +73,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @post.downvote_by current_user
+    redirect_to :back
+  end
+
+  def tag_cloud
+    @tag = Post.tag_counts_on(:tags).order('count desc').limit(20)
+  end
+
   private
-
-
-
 
     def check_user
       unless (@post.user == current_user) 
