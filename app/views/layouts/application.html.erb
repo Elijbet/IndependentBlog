@@ -18,13 +18,18 @@
   <body>
     <%= render 'layouts/navbar' %>
 
-    <div class="container-fluid"
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    <div class="container-fluid">
+    
+    <br>
+    <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <%= value %>
+        </div>
+    <% end %>
 
     <%= yield %>
+    <p>© Eliza Khachatryan</p>
 
     </div>
 

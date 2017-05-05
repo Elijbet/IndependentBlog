@@ -92,7 +92,8 @@ class PostsController < ApplicationController
 
     def check_user
       unless (@post.user == current_user) 
-        redirect_to root_url alert: "Sorry, this review belongs to someone else"
+        redirect_to root_url 
+        flash[:alert] =  "Sorry, this review belongs to someone else"
       end
     end
     # Use callbacks to share common setup or constraints between actions.
