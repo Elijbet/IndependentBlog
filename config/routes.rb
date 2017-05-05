@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :tips, except: [:index, :show, :edit, :update, :delete]
+
+  get '/got-a-tip', to: 'tips#new'
+
   devise_for :users
 
   resources :posts do
