@@ -43,9 +43,6 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'sprockets-rails'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.3.3'
-end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
