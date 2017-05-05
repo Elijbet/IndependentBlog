@@ -20,7 +20,7 @@ String of time for articles in show and index pages
 
 Index page to display abstract of the article, sanitize and truncate
 
-Pagination, limit to 1 article per page
+Pagination on the index page, limit to 5 article per page
 
 Time ago
 
@@ -38,4 +38,4 @@ Voting
 
 Glyphicons on the voting button
 
-
+Bootstrap styling of flash messages

@@ -85,7 +85,7 @@ img {
     margin: 5px;
 }
 .navbar-text{
-  margin-left: 30px;
+  margin-left: 15px;
 }
 .navbar-light .navbar-nav .green-link {
   color: #0A9E01;
@@ -104,3 +104,19 @@ img {
 h4.bottom-link {
     padding-top: .4rem;
   }
+.navbar{
+  display: flex;
+}
+.first{
+}
+.second{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.second-a{
+  flex: 1;
+}
+.second-b{
+  flex: 1;
+}
