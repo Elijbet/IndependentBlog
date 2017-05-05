@@ -41,7 +41,7 @@ gem 'carrierwave', '~> 1.1'
 gem 'fog', '~> 1.40'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sprockets-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
