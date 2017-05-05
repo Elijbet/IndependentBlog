@@ -10,17 +10,15 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).order(created_at: :desc)
+      @posts = Post.tagged_with(params[:tag]).order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @posts = Post.paginate(page: params[:page], per_page: 1)
-    
   end
 
   # GET /posts/new

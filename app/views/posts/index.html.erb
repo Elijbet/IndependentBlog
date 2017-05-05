@@ -1,5 +1,9 @@
+
 <div class="row">
   <div class="col-md-8">
+
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
     <div class="row">
       <% @posts.each do |post| %>
         <div class="col-md-2">
@@ -24,7 +28,11 @@
         </div>
       <% end %>
     </div>
+
+  <%= will_paginate %>
+
   </div>
+
   <!-- aside -->
   <div class="col-md-4 tag">
     <h4> Popular Tags

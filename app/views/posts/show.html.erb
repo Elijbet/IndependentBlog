@@ -5,41 +5,35 @@
   </div>
 
   <div class="col-md-10">
-  
-      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    
+    <h1 class="alpha"><%= @post.title %></h1>
+    <h4 class="byline">Posted on <%= @post.created_at.strftime("%B %d, %Y") %> by <%= @post.user.first_name %> <%= @post.user.last_name %></h4>
+      <div class="row">
+        <div class="col-md-8">
+          <h4><%= h(@post.content).gsub(/\n/, '<br/>').html_safe %></h4>
 
-      <% @posts.each do |post| %>
-      
-        <h1 class="alpha"><%= post.title %></h1>
-        <h4 class="byline">Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
-          <div class="row">
-            <div class="col-md-8">
-              <h4><%= h(post.content).gsub(/\n/, '<br/>').html_safe %></h4>
-
-
-              <!-- voting functionality -->
-              <div class="flex">
-                <%= button_to like_post_path(post), class: "btn btn-secondary flex-child", method: :put do %>
-                  <span class="glyphicons glyphicons-thumbs-up"></span>Upvote
-                  <%= post.get_upvotes.size %>
-                <% end %>
-                <%= button_to dislike_post_path(post), class: "btn btn-secondary flex-child", method: :put do %>
-                  <span class="glyphicons glyphicons-thumbs-down"></span>Downvote
-                  <%= post.get_downvotes.size %>
-                <% end %>
-                <!-- end of voting functionality -->
-                <% if current_user.id == post.user_id %>
-                  <h4 class="bottom-link"><%= link_to 'Edit', edit_post_path(post) %></h4>
-                  <h4 class="bottom-link"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-                <% end %>
-                <h4 class="bottom-link"><%= link_to 'New Post', new_post_path %></h4>
-                <h4 class="bottom-link"><%= link_to 'Back', posts_path %></h4>
-              </div>
-            </div>
-            <div class="col-md-4">
+            <!-- voting functionality -->
+            <div class="flex">
+              <%= button_to like_post_path(@post), class: "btn btn-secondary flex-child", method: :put do %>
+                <span class="glyphicons glyphicons-thumbs-up"></span>Upvote
+                <%= @post.get_upvotes.size %>
+              <% end %>
+              <%= button_to dislike_post_path(@post), class: "btn btn-secondary flex-child", method: :put do %>
+                <span class="glyphicons glyphicons-thumbs-down"></span>Downvote
+                <%= @post.get_downvotes.size %>
+              <% end %>
+              <!-- end of voting functionality -->
+              
+              <% if current_user.id == @post.user_id %>
+                <h4 class="bottom-link"><%= link_to 'Edit', edit_post_path(@post) %></h4>
+                <h4 class="bottom-link"><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+              <% end %>
+              <h4 class="bottom-link"><%= link_to 'New Post', new_post_path(@post) %></h4>
+              <h4 class="bottom-link"><%= link_to 'Back', posts_path %></h4>
             </div>
           </div>
-      <% end %>
-    <%= will_paginate %>
+        <div class="col-md-4">
+        </div>
+      </div>
   </div>
 </div>
