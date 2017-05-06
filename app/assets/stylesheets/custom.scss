@@ -93,7 +93,7 @@ img {
 .navbar-toggleable-md .navbar-collapse {
     width: 60%;
 }
-.bottom-link a {
+.bottom-link a, h6 {
   font-family: sans-serif;
   color: #292b2c !important;
   font-size: 16px;
@@ -137,6 +137,9 @@ h4.bottom-link {
 }
 .box-second-a-1{
   flex: 1;
+.small-image{
+  padding-bottom: 10px;
+}
 }
 .box-second-a-2{
   flex: 2;
