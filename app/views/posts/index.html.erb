@@ -7,7 +7,11 @@
       <div class="box-first">
         <% @posts_most_popular.each do |post| %>
           <h5><%= post.title %></h5>
-          <div class="index-image"><%= image_tag post.image_url %></div>
+          <div class="index-image">
+            <% unless post.image.blank? %>
+              <%= image_tag post.image_url %>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <div class="box-second">
