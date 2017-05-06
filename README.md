@@ -40,7 +40,7 @@ Glyphicons on the voting button
 
 Bootstrap styling of flash messages
 
-Apply flex to modify bootstrap navbar
+Apply flex to modify bootstrap navbar 
 
 Scaffold tips, form for submitting tips, prepopulate user info if the user is logged in
 

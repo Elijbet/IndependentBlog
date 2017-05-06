@@ -6,7 +6,7 @@
     <div class="box">
       <div class="box-first">
         <% @post_most_popular.each do |post| %>
-          <h5> </h5>
+          <h5><%= post.title %></h5>
           <div class="index-image">
             <% unless post.image.blank? %>
               <%= image_tag post.image_url %>
@@ -15,8 +15,8 @@
         <% end %>
       </div>
       <div class="box-second">
-      <h5>Most Popular Today</h5>
-      <br>
+        <h5><br>Most Popular Today</h5>
+        <br>
         <% @posts_popular.each do |post| %>
           <div class="box-second-a">
             <div class="box-second-a-2">
