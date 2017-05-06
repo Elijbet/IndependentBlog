@@ -130,6 +130,9 @@ h4.bottom-link {
   flex: 1;
   flex-direction: column;
   display: flex;
+  h5 {
+  color: #0275d8;
+  }
 }
 .box-second-a{
   flex: 1;
@@ -156,5 +159,6 @@ h4.bottom-link {
   flex: 1;
 }
 .index-image{
-  margin: 30px;
+  margin: 0px 30px 30px;
+  margin-left: 0px;
 }
