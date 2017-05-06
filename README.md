@@ -44,3 +44,4 @@ Apply flex to modify bootstrap navbar
 
 Scaffold tips, form for submitting tips, prepopulate user info if the user is logged in
 
+Implement caching on acts_as_votable to create a section that lists 3 of the "most popuar" rated articles

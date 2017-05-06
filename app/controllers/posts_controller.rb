@@ -14,6 +14,9 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     end
+
+    @posts_popular = Post.order(cached_votes_up: :desc).limit(4)
+    @posts_most_popular = Post.order(cached_votes_up: :desc).limit(1)
   end
 
   # GET /posts/1

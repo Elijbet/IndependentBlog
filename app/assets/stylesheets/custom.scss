@@ -120,3 +120,38 @@ h4.bottom-link {
 .second-b{
   flex: 1;
 }
+.box{
+  display: flex;
+}
+.box-first{
+  flex: 2;
+}
+.box-second{
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+}
+.box-second-a{
+  flex: 1;
+  display: flex;
+}
+.box-second-a-1{
+  flex: 1;
+}
+.box-second-a-2{
+  flex: 2;
+  order: 2;
+  margin-left: 15px;
+  box-sizing: border-box;
+  font-size: .8em;
+}
+.box-second-b{
+  flex: 1;
+  order: 1;
+}
+.box-second-c{
+  flex: 1;
+}
+.index-image{
+  margin: 30px;
+}
