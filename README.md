@@ -46,4 +46,4 @@ Scaffold tips, form for submitting tips, prepopulate user info if the user is lo
 
 Implement caching on acts_as_votable to create a section that lists 3 of the "most popuar" rated articles
 
-Display likes below images
+Display total likes below images

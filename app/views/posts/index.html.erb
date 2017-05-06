@@ -18,7 +18,8 @@
         <% @posts_popular.each do |post| %>
           <div class="box-second-a">
             <div class="box-second-a-2">
-              <h4><%= post.title %></h4>           
+              <h4><%= post.title %></h4> 
+              <h4 class="byline"><%= post.user.first_name %> <%= post.user.last_name %></h4>          
             </div>
               <div class="box-second-a-1">
                 <% unless post.image.blank? %> 
