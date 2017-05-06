@@ -35,9 +35,12 @@
         <% end %>
       </div>
     </div>
+    <br>
   <!-- End of Most Popular Posts (3 Most Voted Up) -->
-
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <div class="pagination">
+      <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+    </div>
 
     <div class="row">
       <% @posts.each do |post| %>
@@ -63,8 +66,11 @@
         </div>
       <% end %>
     </div>
-
-  <%= will_paginate %>
+    <br>
+  <div class="pagination">
+      <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+  </div>
 
   </div>
 
@@ -79,7 +85,6 @@
   </div>
 </div>
 
-<!-- this should move to show page -->
 
 
 

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -35,7 +36,7 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-assets-tether', '>= 1.3.3', source: 'https://rails-assets.org'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
-gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'will_paginate-bootstrap4', '~> 0.1.2'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'carrierwave', '~> 1.1'
 gem 'fog', '~> 1.40'
