@@ -28,10 +28,10 @@ class TipsController < ApplicationController
     @tip = Tip.new(tip_params)
     @tip.user_id = current_user.id
 
-
     respond_to do |format|
       if @tip.save
-        format.html { redirect_to @tip, success: 'Tip was successfully created.' }
+        format.html { redirect_to root_path }
+        flash[:success] = 'Tip was successfully created.'
         format.json { render :show, status: :created, location: @tip }
       else
         format.html { render :new }
@@ -72,6 +72,6 @@ class TipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:headline, :tip, :user_id, :first_name, :last_name, :email)
+      params.require(:tip).permit(:headline, :tip, :first_name, :last_name, :email)
     end
 end
