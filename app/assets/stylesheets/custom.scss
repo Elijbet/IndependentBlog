@@ -132,6 +132,7 @@ h4.bottom-link {
   flex: 1;
   flex-direction: column;
   display: flex;
+
   h5 {
   color: #0275d8;
   }
@@ -139,6 +140,8 @@ h4.bottom-link {
 .box-second-a{
   flex: 1;
   display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 10px
 }
 .box-second-a-1{
   flex: 1;
@@ -179,4 +182,8 @@ $size: 24px;
 .center-me-vert{
   margin-top: auto;
   margin-bottom: auto;
+}
+.list-posts{
+  border-bottom: 2px solid #e8e8e8;
+  padding: 20px;
 }
