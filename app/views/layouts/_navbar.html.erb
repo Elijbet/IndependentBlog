@@ -9,14 +9,20 @@
 
   <div class="second">
 
-    <div class="second-a">
-        <ul class="navbar-nav mr-auto">
+    <div class="second-a d-flex justify-content-end">
+        <ul class="navbar-nav mr-auto p-2">
           </li>
             <span class="navbar-text">Got an idea?</span>
-            <li class="nav-item">
+          <li class="nav-item">
               <a><%= link_to 'Let us know!', got_a_tip_path, class: "nav-link green-link" %></a>
           </li>
         </ul>
+        <div class="p-2 center-me-vert">
+          <h6>Follow Us!</h6>
+        </div>
+        <div class="p-2">
+          <%= social_share_button_tag %>
+        </div>
     </div>
     <div class="second-b d-flex justify-content-end">
      
@@ -40,7 +46,7 @@
 
         <!-- dropdown -->
 
-      <div class="dropdown show p-2">
+      <div class="dropdown show p-2 center-me-vert">
         <a class="btn btn-outline-success dropdown-toggle mr-sm-2" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
         </a>

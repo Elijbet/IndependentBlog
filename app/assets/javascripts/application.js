@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require social-share-button
 
 // $(document).ready(function(){
 //     $('.dropdown-toggle').dropdown();

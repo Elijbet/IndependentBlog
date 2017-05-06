@@ -6,7 +6,7 @@
     <div class="box">
       <div class="box-first">
         <% @post_most_popular.each do |post| %>
-          <h5><%= post.title %></h5>
+          <h5><%= link_to post.title, post %></h5>
           <div class="index-image img-fluid">
             <% unless post.image.blank? %>
               <%= image_tag post.image_url %>
@@ -20,7 +20,7 @@
         <% @posts_popular.each do |post| %>
           <div class="box-second-a">
             <div class="box-second-a-2">
-              <h4><%= truncate(post.title, length: 65) %></h4> 
+              <h4><%= link_to truncate(post.title, length: 65), post %></h4> 
               <h4 class="byline"><%= post.user.first_name %> <%= post.user.last_name %></h4>          
             </div>
               <div class="box-second-a-1">

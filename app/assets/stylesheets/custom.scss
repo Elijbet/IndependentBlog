@@ -95,7 +95,7 @@ img {
 }
 .bottom-link a, h6 {
   font-family: sans-serif;
-  color: #292b2c !important;
+  color: #828282 !important;
   font-size: 16px;
   font-weight: normal;
   margin-right: 5px;
@@ -116,9 +116,11 @@ h4.bottom-link {
 }
 .second-a{
   flex: 1;
+  display: flex;
 }
 .second-b{
   flex: 1;
+  display: flex;
 }
 .box{
   display: flex;
@@ -162,4 +164,19 @@ h4.bottom-link {
 .index-image{
   margin: 0px 30px 30px;
   margin-left: 0px;
+}
+
+$size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    filter: grayscale(1);
+  }
+}
+.center-me-vert{
+  margin-top: auto;
+  margin-bottom: auto;
 }

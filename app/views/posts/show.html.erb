@@ -5,7 +5,6 @@
   </div>
 
   <div class="col-md-10">
-    
     <h1 class="alpha"><%= @post.title %></h1>
     <h4 class="byline">Posted on <%= @post.created_at.strftime("%B %d, %Y") %> by <%= @post.user.first_name %> <%= @post.user.last_name %></h4>
       <div class="row">
