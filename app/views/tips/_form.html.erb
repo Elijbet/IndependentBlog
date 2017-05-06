@@ -12,23 +12,60 @@
   <% end %>
 
   <!-- if user logged in prepopulate form fields with username, if not empty fields -->
+
+  <div class="form-group">
+
+    <%= f.label :first_name %>
+
+    <% if user_signed_in? %>
+      <%= f.text_field :first_name, value: current_user.first_name, :readonly => true, class: "form-control" %>
+    <% else %>
+      <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+    <% end %>
+
+  </div>
+
+  <div class="form-group">
+
+    <%= f.label :last_name %>
+
+    <% if user_signed_in? %>
+      <%= f.text_field :last_name, value: current_user.last_name, :readonly => true, class: "form-control" %>
+    <% else %>
+      <%= f.text_field :last_name, class: "form-control" %>
+    <% end %>
+
+  </div>
+
+  <div class="form-group">
+
+    <%= f.label :email %>
+
+    <% if user_signed_in? %>
+      <%= f.text_field :email, value: current_user.email, :readonly => true, class: "form-control" %>
+    <% else %>
+    <%= f.email_field :email, class: "form-control" %>
+    <% end %>
+
+  </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :headline %>
-    <%= f.text_field :headline %>
+    <%= f.text_field :headline, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :tip %>
-    <%= f.text_area :tip %>
+    <%= f.text_area :tip, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.number_field :user_id, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
+  
 <% end %>
