@@ -44,8 +44,12 @@ Apply flex to modify bootstrap navbar
 
 Scaffold tips, form for submitting tips, prepopulate user info if the user is logged in
 
-Implement caching on acts_as_votable to create a section that lists 3 of the "most popuar" rated articles
+Implement caching on acts_as_votable to create a section that lists 3 of the "most popular" rated articles
 
 Display total likes below images
 
 Social share button gem
+
+Bootstrap 4 styling of pagination gem
+
+Display tags associated with each article below

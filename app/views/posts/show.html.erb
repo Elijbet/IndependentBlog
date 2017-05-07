@@ -11,6 +11,12 @@
         <div class="col-md-8">
           <h4><%= h(@post.content).gsub(/\n/, '<br/>').html_safe %></h4>
 
+          <!-- tags -->
+          <% @post.tags.each do |tag| %>
+            <span class="tag css4"><%= tag.name %></span>
+          <% end %>
+          <!-- end of tags -->
+
             <!-- voting functionality -->
             <div class="flex">
               <%= button_to like_post_path(@post), class: "btn btn-secondary flex-child", method: :put do %>
