@@ -45,6 +45,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'sprockets-rails'
 gem 'social-share-button', '~> 0.10.0'
 gem 'best_in_place', '~> 3.1'
+gem 'searchkick', '~> 2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

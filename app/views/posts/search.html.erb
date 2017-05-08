@@ -1,0 +1,63 @@
+
+<div class="row">
+  <div class="col-md-8">
+
+
+    <div class="pagination">
+      <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+    </div>
+
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-md-2">
+          <!-- date -->
+          <h4 class="byline"><%= time_ago_in_words(post.created_at) %> ago </h4>
+        </div>
+        <div class="col-md-10 list-posts">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="seperation"></div>
+              <!-- content -->
+              <h5><%= link_to "#{post.title}", post %></h5>
+              <h4 class="byline"> by <%= post.user.first_name %> <%= post.user.last_name %></h4>
+              <h4><%= truncate(post.content, length: 150) %></h4>
+            </div>
+            <div class="col-md-4">
+              <% unless post.image.blank? %> 
+                <%= image_tag post.image_url %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <br>
+  <div class="pagination">
+      <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+  </div>
+
+  </div>
+
+  <!-- aside -->
+  <div class="col-md-4 tag">
+    <h4> Popular Tags
+      <br>
+      <% tag_cloud(@tag, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+      <% end %>
+    </h4>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -7,4 +7,6 @@ class Post < ApplicationRecord
 
   acts_as_votable
 
+  searchkick
+  
 end

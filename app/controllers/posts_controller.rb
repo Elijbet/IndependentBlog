@@ -89,6 +89,14 @@ class PostsController < ApplicationController
     @tag = Post.tag_counts_on(:tags).order('count desc').limit(20)
   end
 
+  def search
+    if params[:search].present?
+      @posts = Post.search(params[:search], page: params[:page], per_page: 5)
+    else
+      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    end
+  end
+
   private
 
     def check_user
