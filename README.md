@@ -54,4 +54,4 @@ Bootstrap 4 styling of pagination gem
 
 Display tags associated with each article below
 
-Gem searchkick
+Gem searchkick and elasticsearch install
