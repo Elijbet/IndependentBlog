@@ -17,12 +17,15 @@
 //= require turbolinks
 //= require_tree .
 //= require social-share-button
+//= require best_in_place
 
-// $(document).ready(function(){
-//     $('.dropdown-toggle').dropdown();
-// });
 
 
 $(document).on('turbolinks:load', function() {
  $('.dropdown-toggle').dropdown();
+});
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
 });

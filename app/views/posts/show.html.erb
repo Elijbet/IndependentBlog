@@ -15,6 +15,9 @@
           <% @post.tags.each do |tag| %>
             <span class="tag css4"><%= tag.name %></span>
           <% end %>
+          
+          <!-- <%= best_in_place @post, :tag_list %> -->
+
           <!-- end of tags -->
 
             <!-- voting functionality -->
