@@ -92,7 +92,9 @@
       <% @user.each do |user| %> 
         <div class="booth-A"> 
           <% unless user.image.blank? %>
-            <%= image_tag user.image_url %>
+            <div title=<%= user.first_name %><%= user.last_name %>>
+              <%= image_tag user.image_url %>
+            </div>
           <% end %>
         </div>
       <% end %>

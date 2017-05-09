@@ -56,4 +56,4 @@ Display tags associated with each article below
 
 Gem searchkick, elasticsearch, and add on SearchBox for deployment 
 
-Configure User strong params to accept user images with carrierwave uploader
+Configure User strong params to accept user images with carrierwave uploader, display in a flex grid
