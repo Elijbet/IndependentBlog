@@ -86,7 +86,7 @@ class PostsController < ApplicationController
   end
 
   def tag_cloud
-    @tag = Post.tag_counts_on(:tags).order('count desc').limit(20)
+    @tag = Post.tag_counts_on(:tags).order('count desc').limit(17)
   end
 
   def search
