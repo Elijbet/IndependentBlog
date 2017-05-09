@@ -39,7 +39,7 @@
   <!-- End of Most Popular Posts (3 Most Voted Up) -->
     <div class="pagination">
       <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</div>
+      </div>
     </div>
 
     <div class="row">
@@ -67,24 +67,36 @@
       <% end %>
     </div>
     <br>
-  <div class="pagination">
-      <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</div>
-  </div>
+    <div class="pagination">
+        <div class="center-me-horiz"><%= will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+    </div>
 
   </div>
 
   <!-- aside -->
   <div class="col-md-3 tag">
+
     <h4> Popular Tags
       <br>
       <% tag_cloud(@tag, %w(css1 css2 css3 css4)) do |tag, css_class| %>
         <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
       <% end %>
     </h4>
-  </div>
 
-  
+  <!-- photo booth -->
+    <br>
+    <h5>Meet Our Writers</h5>
+    <br>
+    <div class="photo-booth">
+      <% @user.each do |user| %> 
+        <div class="booth-A"> 
+          <% unless user.image.blank? %>
+            <%= image_tag user.image_url %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
 </div>
 
 

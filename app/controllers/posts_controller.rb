@@ -17,6 +17,8 @@ class PostsController < ApplicationController
 
     @posts_popular = Post.order(cached_votes_up: :desc).limit(4)
     @post_most_popular = Post.order(cached_votes_up: :desc).limit(1)
+
+    @user = User.all.limit(10)
   end
 
   # GET /posts/1
