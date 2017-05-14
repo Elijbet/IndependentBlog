@@ -3,6 +3,9 @@ Independent Blog project with the objective to use all the tools learnt up to no
 
 Check out the blog at: https://independentblog.herokuapp.com/
 
+Log in as example user Natasha, password is "password".
+
+
 
 Postgres set up both in production (Heroku) and in development.
 
