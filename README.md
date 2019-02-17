@@ -2,7 +2,7 @@
 ## Independent Blog project with the objective to use all the tools learnt up to now.
 
 -----------------------------------
-Members log in to the blog to post images and articles as well as like the articles. The most popular ones show up in the featured column. The most recent articles are listed first. 
+#### Members log in to the blog to post images and articles as well as like the articles. The most popular ones show up in the featured column. The most recent articles are listed first. 
 -----------------------------------
 
 Check out the blog at: https://independentblog.herokuapp.com/
