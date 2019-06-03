@@ -6,6 +6,12 @@ Members log in to the blog to post images and articles as well as like the artic
 
 Check out the blog at: [Independent Blog](https://independentblog.herokuapp.com/)
 
+## Project Photos
+
+![Independent Blog Image](https://drive.google.com/uc?export=view&id=1dwrhgkNYKif5p2v1C5Zh6px0nrvYbl8N)
+
+![Independent Blog Image](https://drive.google.com/uc?export=view&id=15rE_40NbVehYm8Tt-62tATYgOLHn6F-L)
+
 ## Project Roadmap
 
 - Postgres set up both in production (Heroku) and in development.
